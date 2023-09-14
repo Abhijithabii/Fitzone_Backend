@@ -133,7 +133,7 @@ class UserProfileUpdateView(APIView):
         serializer = UserProfileUpdateSerializer(user.profile, data=request.data)
         
         if serializer.is_valid():
-            print('valid')
+           
             serializer.save()
             return Response(serializer.data)
         print(serializer.errors,'-----errrrrrrr')
