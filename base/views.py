@@ -128,7 +128,6 @@ class UserProfileUpdateView(APIView):
     
 
     def put(self, request, id, format=None):
-        print('updation start')
         user = self.get_user(id)
         print(user,'--------got user')
         serializer = UserProfileUpdateSerializer(user.profile, data=request.data)
