@@ -129,9 +129,9 @@ class UserProfileUpdateView(APIView):
 
     def put(self, request, id, format=None):
         user = self.get_user(id)
-        print(user,'--------got user')
+        
         serializer = UserProfileUpdateSerializer(user.profile, data=request.data)
-        print(serializer,'-------serializer')
+        
         if serializer.is_valid():
             print('valid')
             serializer.save()
