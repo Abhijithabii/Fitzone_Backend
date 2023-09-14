@@ -31,7 +31,7 @@ SITE_URL = config('FRONT_SITE_URL')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # stripe secret key
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
@@ -200,6 +200,9 @@ CORS_ALLOWED_ORIGINS=[
     'http://localhost:3000'
 ]
 
+
+
+CORS_ORIGIN_ALLOW_ALL=True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = config('EMAIL_HOST')
