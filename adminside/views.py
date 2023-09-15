@@ -258,7 +258,7 @@ class CourseRelatedTrainersListView(APIView):
 
 stripe.api_key=settings.STRIPE_SECRET_KEY
 
-API_URL=settings.DJANGO_SERVER
+API_URL="https://fitzone-backend.onrender.com"
 
 
 class CreateCheckOutSession(APIView):
