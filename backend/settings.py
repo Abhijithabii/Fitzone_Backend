@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 
 SITE_URL = config('FRONT_SITE_URL')
-DJANGO_SERVER = config('DJANGO_SERVER')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
