@@ -258,7 +258,7 @@ class CourseRelatedTrainersListView(APIView):
 
 stripe.api_key=settings.STRIPE_SECRET_KEY
 
-API_URL="http://localhost:8000"
+API_URL=settings.DJANGO_SERVER
 
 
 class CreateCheckOutSession(APIView):
