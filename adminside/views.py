@@ -277,6 +277,7 @@ class CreateCheckOutSession(APIView):
             print(course,'----courseeeeeeeeeeeee')
             user = CustomUser.objects.get(id=current_user_id)
             print(user,'userrrrrrrrrrrrrrrrrrrrrrrrrrr')
+            print('gottt')
             if PurchasedOrder.objects.filter(selected_course=course, user=user).exists():
                 purchased_order = PurchasedOrder.objects.get(selected_course=course, user=user)
                 if purchased_order.valid_up_to and purchased_order.valid_up_to > timezone.now():
