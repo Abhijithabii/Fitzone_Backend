@@ -268,13 +268,15 @@ class CreateCheckOutSession(APIView):
         selected_trainer_id = request.data.get('selectedTrainerId')
         current_user_id = request.data.get('currentUserId')
         selectedTime = request.data.get('selectedTime')
-        print(selected_trainer_id,'---------trainer')
-        print(current_user_id,'---------user')
+        print(selected_trainer_id,'---------trainer id')
+        print(current_user_id,'---------user id')
         print(selectedTime,'---------time')
-        print(course_id,'---------course')
+        print(course_id,'---------course id')
         try:
             course=Course.objects.get(id=course_id)
+            print(course,'----courseeeeeeeeeeeee')
             user = CustomUser.objects.get(id=current_user_id)
+            print(user,'userrrrrrrrrrrrrrrrrrrrrrrrrrr')
             if PurchasedOrder.objects.filter(selected_course=course, user=user).exists():
                 purchased_order = PurchasedOrder.objects.get(selected_course=course, user=user)
                 if purchased_order.valid_up_to and purchased_order.valid_up_to > timezone.now():
@@ -308,7 +310,9 @@ class CreateCheckOutSession(APIView):
                 success_url=settings.SITE_URL + '/profile',
                 cancel_url=settings.SITE_URL + f'/classesdetails/{course_id}',
             )
+            print(checkout_session.url,'-----url')
             return redirect(checkout_session.url)
+        
         except Exception as e:
             import traceback
             traceback.print_exc()
